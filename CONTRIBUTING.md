@@ -141,8 +141,7 @@ When adding new sections, update the relevant `meta.json` file:
   "user-guide": "User Guide",
   "features": "Features",
   "troubleshooting": "Troubleshooting",
-  "security": "Security",
-  "api": "API Reference"
+  "security": "Security"
 }
 ```
 

@@ -91,7 +91,6 @@ docs.maraikka.com/
 ├── features/
 ├── troubleshooting/
 ├── security/
-├── api/
 └── advanced/
 ```
 
