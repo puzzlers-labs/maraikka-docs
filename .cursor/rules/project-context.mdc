@@ -1,0 +1,164 @@
+---
+description: 
+globs: 
+alwaysApply: true
+---
+# Cursor AI Development Rules
+
+## 📖 **IMPORTANT: Read Project Context**
+**Before starting any work, reference README.md for complete project information including:**
+- Technology stack details
+- Repository structure
+- Development principles
+- Deployment guidelines
+- Project architecture
+
+## 📝 **MANDATORY DOCUMENTATION REQUIREMENTS**
+
+**ALL CODE CHANGES MUST BE THOROUGHLY DOCUMENTED WITH COMMENTS:**
+
+### For JavaScript/JSX Files:
+- **File-level comments** explaining the purpose and scope
+- **Function/component comments** describing parameters, return values, and behavior
+- **Complex logic comments** explaining non-obvious implementations
+- **Configuration comments** explaining settings and options
+
+### For MDX/Markdown Files:
+- **Section headers** that clearly describe content
+- **Meta descriptions** for SEO and navigation
+- **Cross-references** to related documentation
+- **Update timestamps** when modifying existing content
+
+### For Configuration Files:
+- **Purpose comments** explaining what the configuration does
+- **Option explanations** for non-obvious settings
+- **Dependency notes** explaining why specific versions are used
+- **Environment considerations** for different deployment scenarios
+
+## 🎨 **Documentation Style Guidelines**
+
+### **Comment Formatting Standards:**
+- **NO divider lines** - Avoid `====`, `----`, `***`, `###` or similar repetitive character dividers
+- **NO project name repetition** - NEVER add "for Maraikka Documentation" or similar project-specific suffixes to file headers
+- **Clean section headers** - Use descriptive comment headers without decoration
+- **Consistent spacing** - Single blank line between sections
+- **Clear hierarchy** - Use comment nesting and indentation for organization
+
+### **Preferred Comment Style:**
+```javascript
+// Main Section Title
+// Brief description of what this section does
+
+// Subsection
+// Specific explanation
+
+// Another item
+// Clear, concise explanation
+```
+
+### **Avoid These Patterns:**
+```javascript
+// ====================================
+// Section Title (DON'T USE)
+// ====================================
+
+// ------------------------------------
+// Another Section (DON'T USE)
+// ------------------------------------
+```
+
+## 🛠️ **AI-Specific Development Instructions**
+
+### Content Creation Standards:
+- Use clear, concise language appropriate for technical documentation
+- Include practical examples and code snippets where relevant
+- Provide step-by-step instructions for complex procedures
+- Add screenshots or diagrams to illustrate concepts
+- Ensure all links are functional and up-to-date
+
+### Code Quality Requirements:
+- Follow Next.js and React best practices
+- Maintain consistent code formatting
+- Use semantic HTML for accessibility
+- Optimize images and assets for web delivery
+- Test functionality across different devices and browsers
+
+### File Organization Rules:
+- Place content in appropriate directory structures
+- Use descriptive, kebab-case filenames
+- Maintain consistent meta.json navigation files
+- Keep related content grouped logically
+- Archive or remove outdated content
+
+## 🎨 **Styling and Design Standards**
+- Follow Nextra's theming conventions
+- Maintain consistency with Maraikka's brand colors (violet/purple theme)
+- Ensure responsive design for mobile and desktop
+- Use appropriate typography hierarchy
+- Implement dark/light theme support
+
+## 🔍 **Quality Assurance Checklist**
+Before completing any task, ensure:
+- [ ] All internal links work correctly
+- [ ] Documentation examples and code snippets are tested
+- [ ] Consistent formatting across all pages
+- [ ] Accessibility standards are met
+- [ ] Spelling and grammar are correct
+- [ ] Build process succeeds (`npm run build`)
+- [ ] Search functionality works with new content
+
+## 🎯 **Context-Specific AI Instructions**
+
+### When Working with MDX Files:
+- Always include proper frontmatter with title and description
+- Use appropriate heading hierarchy (H1 for page titles, H2 for major sections)
+- Include callout blocks for important notes, tips, and warnings
+- Add code syntax highlighting for technical examples
+- Cross-reference related documentation pages
+
+### When Modifying Configuration:
+- Test changes in development environment first
+- Document any breaking changes or migration requirements
+- Update relevant documentation if configuration affects user experience
+- Maintain backward compatibility when possible
+
+### When Adding New Features:
+- Create comprehensive documentation for the new feature
+- Include examples and use cases
+- Update navigation and search indexes
+- Consider internationalization needs for future expansion
+
+## 📋 **Living Document Maintenance**
+
+### 🔄 **CRITICAL: Both This File and README.md are Living Documents**
+Both this Cursor rules file and the README.md must evolve with the codebase to remain accurate and helpful.
+
+### 🤖 **Cursor AI Maintenance Responsibilities**
+When working on this project, you must:
+
+#### **Monitor and Update This Rules File When:**
+1. **New AI-specific patterns emerge** - Add new development standards or conventions
+2. **Quality requirements change** - Update documentation or code quality standards
+3. **Context-specific instructions evolve** - Modify AI-specific workflow instructions
+4. **New AI tools/features are used** - Document new AI-assisted development patterns
+
+#### **Monitor and Update README.md When:**
+1. **Technology stack changes** - Package.json updates, framework changes
+2. **Repository structure changes** - New directories, file reorganization
+3. **Development processes change** - New guidelines, build processes
+4. **Project scope expands** - New features, target audiences, deployment methods
+5. **Architecture evolves** - Significant structural changes to the project
+
+### 🔧 **Self-Maintenance Protocol**
+- **Before making significant changes**: Review if README.md or this rules file need updates
+- **After structural changes**: Update repository information in README.md
+- **When new standards emerge**: Add them to this rules file
+- **After dependency updates**: Update technology stack information in README.md
+
+### ⚠️ **Critical Requirements**
+1. **Proactively suggest updates** to both files when detecting relevant changes
+2. **Reference README.md first** for project context before starting work
+3. **Keep documentation requirements current** in this rules file
+4. **Maintain accuracy** of all project information across both documents
+
+This dual living document approach ensures comprehensive, up-to-date guidance for AI assistance while keeping project information centralized in README.md.

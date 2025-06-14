@@ -1,0 +1,33 @@
+{
+  // VSCode Extensions Configuration
+  // Defines the recommended extensions for contributors
+  // Ensures consistent development environment and tooling across the team
+
+  "recommendations": [
+    // Markdown Support
+    // Enhanced markdown editing and preview capabilities for documentation work
+    // Provides live preview, math support, diagrams, and export functionality
+    "shd101wyy.markdown-preview-enhanced",
+
+    // Code Quality and Formatting
+    // Essential tools for maintaining consistent code style and clean documentation
+
+    // Prettier - Code formatter for consistent styling across all file types
+    // Integrates with prettier.config.js for documentation-optimized formatting
+    "esbenp.prettier-vscode",
+
+    // Trailing Spaces - Highlights and removes unwanted whitespace
+    // Prevents Git diff noise and maintains clean file formatting
+    // Configured in settings.json with red highlighting and auto-trim on save
+    "shardulm94.trailing-spaces"
+  ]
+
+  // Extension Selection Rationale
+  // This minimal set of 3 extensions provides maximum value with minimal overhead
+  // Each extension serves a specific purpose for documentation development
+  //
+  // Excluded Extensions
+  // Many common extensions are intentionally omitted to keep the setup lightweight
+  // Contributors can install additional extensions based on personal preference
+  // The core functionality for documentation work is covered by these 3 extensions
+}

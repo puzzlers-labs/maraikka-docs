@@ -1,0 +1,67 @@
+{
+  "name": "maraikka-docs",
+  "version": "0.1.0",
+  "description": "Documentation for Maraikka - Protect What Matters. Secure file encryption software with AES-256 encryption.",
+  "homepage": "https://maraikka.com",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "postbuild": "pagefind --site out --output-path out/_pagefind",
+    "postinstall": "husky install",
+    "start": "npx serve@latest out",
+    "lint": "next lint",
+    "clean": "rm -rf .next out",
+    "analyze": "ANALYZE=true pnpm build",
+    "prepare": "husky"
+  },
+  "dependencies": {
+    "next": "15.3.3",
+    "nextra": "4.2.17",
+    "nextra-theme-docs": "4.2.17",
+    "react": "19.1.0",
+    "react-dom": "19.1.0"
+  },
+  "packageManager": "pnpm@10.12.1",
+  "lint-staged": {
+    "*.{js,jsx,ts,tsx,md,mdx}": [
+      "eslint --fix",
+      "prettier --write"
+    ]
+  },
+  "devDependencies": {
+    "@eslint/eslintrc": "^3.3.1",
+    "@eslint/js": "^9.29.0",
+    "eslint": "^9.29.0",
+    "eslint-config-next": "15.3.3",
+    "husky": "^9.1.7",
+    "lint-staged": "^16.1.1",
+    "pagefind": "^1.3.0"
+  },
+  "engines": {
+    "node": ">=22.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/puzzlers-labs/maraikka-docs.git"
+  },
+  "bugs": {
+    "url": "https://github.com/puzzlers-labs/maraikka-docs/issues"
+  },
+  "keywords": [
+    "documentation",
+    "maraikka",
+    "ai",
+    "platform",
+    "next.js",
+    "nextra",
+    "puzzlers-labs"
+  ],
+  "author": {
+    "name": "Puzzlers Labs",
+    "url": "https://maraikka.com",
+    "email": "contact@maraikka.com"
+  },
+  "license": "MIT"
+}

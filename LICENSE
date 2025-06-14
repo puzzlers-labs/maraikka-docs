@@ -1,0 +1,66 @@
+MIT License (Modified for Commercial Use)
+
+Copyright (c) Puzzlers Labs
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction for NON-COMMERCIAL purposes, including
+without limitation the rights to use, copy, modify, merge, publish, distribute,
+sublicense, and/or sell copies of the Software for non-commercial purposes,
+and to permit persons to whom the Software is furnished to do so, subject to
+the following conditions:
+
+COMMERCIAL USE RESTRICTION:
+Any commercial use, including but not limited to selling, licensing for profit,
+or incorporating this documentation into commercial products or services,
+requires explicit written permission from Puzzlers Labs. Contact hello@puzzlers-labs.com
+for commercial licensing inquiries.
+
+SCOPE AND LIMITATIONS:
+This license applies EXCLUSIVELY to the Maraikka Documentation project contained
+in this repository. This license does NOT extend to, cover, or grant any rights
+whatsoever to:
+
+- The main Maraikka application/software
+- Any other Maraikka products, services, or components
+- Maraikka's source code, APIs, or backend systems
+- Maraikka's trademarks, logos, or brand assets
+- Any other intellectual property owned by Puzzlers Labs
+
+Each component of the Maraikka ecosystem operates under its own independent
+licensing terms. No rights, permissions, or licenses are granted beyond this
+specific documentation project. Users must obtain separate authorization for
+any use of other Maraikka properties.
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+
+---
+
+COMMERCIAL LICENSING:
+For commercial use of this documentation, please contact:
+- Email: hello@puzzlers-labs.com
+- Subject: "Commercial License Request - Maraikka Documentation"
+- Include: Intended commercial use case and organization details
+
+NON-COMMERCIAL USE EXAMPLES:
+✓ Personal learning and reference
+✓ Educational purposes
+✓ Open source projects
+✓ Research and academic use
+✓ Community contributions and improvements
+
+COMMERCIAL USE EXAMPLES (Requires Permission):
+✗ Selling documentation as a product
+✗ Including in commercial software packages
+✗ Using in paid training materials
+✗ Incorporating into commercial consulting services
+✗ Redistributing as part of commercial offerings
