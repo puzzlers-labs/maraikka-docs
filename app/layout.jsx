@@ -2,49 +2,50 @@
 // This file configures the overall layout, theme, and global components
 // Uses Nextra theme with custom branding and configuration
 
-import { Layout, Navbar } from 'nextra-theme-docs'
-import { Head, Search } from 'nextra/components'
-import { getPageMap } from 'nextra/page-map'
-import CustomFooter from '../components/CustomFooter'
-import 'nextra-theme-docs/style.css'
+import { Layout, Navbar } from "nextra-theme-docs";
+import { Head, Search } from "nextra/components";
+import { getPageMap } from "nextra/page-map";
+import Image from "next/image";
+import CustomFooter from "../components/CustomFooter";
+import "nextra-theme-docs/style.css";
 
 // Site Metadata Configuration
 // Defines default metadata for SEO, Open Graph, and browser display
 // Page-specific metadata in MDX frontmatter will override these defaults
 export const metadata = {
   // Metadata base URL for resolving relative URLs in Open Graph and Twitter images
-  metadataBase: new URL('https://docs.maraikka.com'),
+  metadataBase: new URL("https://docs.maraikka.com"),
 
   // Title configuration with template for page-specific titles
   title: {
     // Default title for pages without explicit titles
-    default: 'Maraikka Documentation',
+    default: "Maraikka Documentation",
     // Template for pages with titles: "Page Title | Maraikka"
-    template: '%s | Maraikka'
+    template: "%s | Maraikka",
   },
   // Default site description (overridden by page-specific descriptions)
-  description: 'Documentation for Maraikka - Protect What Matters.',
+  description: "Documentation for Maraikka - Protect What Matters.",
 
   // Default Open Graph metadata (enhanced by page-specific metadata)
   openGraph: {
-    title: 'Maraikka Documentation',
-    description: 'Documentation for Maraikka - Protect What Matters.',
-    type: 'website',
-    siteName: 'Maraikka Documentation',
-    locale: 'en_US'
+    title: "Maraikka Documentation",
+    description: "Documentation for Maraikka - Protect What Matters.",
+    type: "website",
+    siteName: "Maraikka Documentation",
+    locale: "en_US",
   },
 
   // Default Twitter Card metadata
   twitter: {
-    card: 'summary_large_image',
-    title: 'Maraikka Documentation',
-    description: 'Documentation for Maraikka - Protect What Matters.'
+    card: "summary_large_image",
+    title: "Maraikka Documentation",
+    description: "Documentation for Maraikka - Protect What Matters.",
   },
 
   // Site-wide metadata that applies to all pages
-  applicationName: 'Maraikka Documentation',
-  generator: 'Next.js',
-  referrer: 'origin-when-cross-origin',
+  applicationName: "Maraikka Documentation",
+  generator: "Next.js",
+  referrer: "origin-when-cross-origin",
 
   // Default robots configuration (can be overridden per page)
   robots: {
@@ -53,32 +54,61 @@ export const metadata = {
     googleBot: {
       index: true,
       follow: true,
-      'max-video-preview': -1,
-      'max-image-preview': 'large',
-      'max-snippet': -1
-    }
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
   },
 
   // Additional metadata for search engines and browsers
-  keywords: ['maraikka', 'documentation', 'security', 'privacy', 'protect what matters', 'encryption'],
-  authors: [{ name: 'Puzzlers Labs' }],
-  creator: 'Puzzlers Labs',
-  publisher: 'Puzzlers Labs'
-}
+  keywords: [
+    "maraikka",
+    "documentation",
+    "security",
+    "privacy",
+    "protect what matters",
+    "encryption",
+  ],
+  authors: [{ name: "Puzzlers Labs" }],
+  creator: "Puzzlers Labs",
+  publisher: "Puzzlers Labs",
+};
 
 // Navigation Bar Component
 // Configures the top navigation with logo and project link
 const navbar = (
   <Navbar
-    // Custom logo with Maraikka branding and violet color theme
+    // Custom logo with Maraikka PNG logo, vertical rule, and "Docs" text
     logo={
-      <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-        <strong>Maraikka</strong>
-        <span style={{
-          fontSize: '0.875rem',
-          color: 'var(--nx-colors-gray-600)',
-          fontWeight: 'normal'
-        }}>
+      <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
+        <Image
+          src="/logo-full.png"
+          alt="Maraikka"
+          width={96}
+          height={24}
+          style={{
+            height: "24px",
+            width: "auto",
+            display: "block",
+          }}
+        />
+        <span
+          style={{
+            width: "1px",
+            height: "20px",
+            backgroundColor: "#d1d5db",
+            display: "block",
+            flexShrink: 0,
+          }}
+        />
+        <span
+          style={{
+            fontSize: "0.875rem",
+            color: "var(--nx-colors-gray-600)",
+            fontWeight: "normal",
+            paddingTop: "0.25rem",
+          }}
+        >
           Docs
         </span>
       </div>
@@ -86,11 +116,11 @@ const navbar = (
     // Link to the main Maraikka repository
     projectLink="https://github.com/puzzlers-labs/maraikka"
   />
-)
+);
 
 // Footer Component
 // Custom footer with hover effects implemented as a Client Component
-const footer = <CustomFooter />
+const footer = <CustomFooter />;
 
 // Root Layout Component
 // Wraps all pages with consistent layout, theme, and functionality
@@ -106,13 +136,13 @@ export default async function RootLayout({ children }) {
       <Head
         // Theme colors for browser UI and PWA
         backgroundColor={{
-          dark: 'rgb(15, 23, 42)',    // Dark slate background
-          light: 'rgb(250,250,250)'   // Light off-white background
+          dark: "rgb(15, 23, 42)", // Dark slate background
+          light: "rgb(250,250,250)", // Light off-white background
         }}
         // Violet color theme matching Maraikka branding
         color={{
-          hue: { dark: 270, light: 270 },        // Violet hue
-          saturation: { dark: 100, light: 100 }  // Full saturation
+          hue: { dark: 270, light: 270 }, // Violet hue
+          saturation: { dark: 100, light: 100 }, // Full saturation
         }}
       />
       <body>
@@ -120,21 +150,17 @@ export default async function RootLayout({ children }) {
           // Top-level components
           navbar={navbar}
           footer={footer}
-
           // Site structure and navigation
           // Dynamic page map for automatic navigation generation
           pageMap={await getPageMap()}
-
           // GitHub integration for content editing
           docsRepositoryBase="https://github.com/puzzlers-labs/maraikka-docs/tree/main"
           editLink="Edit this page on GitHub"
-
           // Sidebar configuration
           sidebar={{
             defaultMenuCollapseLevel: 2,
-            toggleButton: true
+            toggleButton: true,
           }}
-
           // Search functionality
           search={
             <Search
@@ -144,31 +170,28 @@ export default async function RootLayout({ children }) {
               loading="Loading..."
             />
           }
-
           // Theme switcher configuration
           themeSwitch={{
-            dark: 'Dark',
-            light: 'Light',
-            system: 'System'
+            dark: "Dark",
+            light: "Light",
+            system: "System",
           }}
-
           // Table of contents configuration
           toc={{
             backToTop: true,
-            title: 'On This Page'
+            title: "On This Page",
           }}
-
           // Feedback functionality
           feedback={{
-            content: 'Report an issue',
-            labels: 'feedback'
+            content: "Report an issue",
+            labels: "feedback",
           }}
         >
           {children}
         </Layout>
       </body>
     </html>
-  )
+  );
 }
 
 // Layout Architecture

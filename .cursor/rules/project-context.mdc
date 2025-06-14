@@ -116,6 +116,57 @@ Before completing any task, ensure:
 - Add code syntax highlighting for technical examples
 - Cross-reference related documentation pages
 
+### **CRITICAL: Documentation File Updates (content/ directory)**
+**When updating ANY file in the content/ directory, you MUST:**
+
+1. **Update frontmatter metadata** with complete SEO-optimized information:
+   ```yaml
+   ---
+   title: "Specific, descriptive page title (50-60 chars)"
+   description: "Compelling description (150-160 chars)"
+   keywords: ["primary-keyword", "secondary-keyword", "long-tail-phrase"]
+   author: "Puzzlers Labs"
+   section: "Documentation category"
+   canonical: "https://docs.maraikka.com/page-path"
+   lastModified: "YYYY-MM-DD"
+   openGraph:
+     title: "Social media optimized title"
+     description: "Social description (up to 300 chars)"
+     type: "article"
+     images:
+       - url: "/images/page-specific-og.png"
+         width: 1200
+         height: 630
+         alt: "Descriptive alt text"
+   twitter:
+     card: "summary_large_image"
+     title: "Twitter optimized title"
+     description: "Twitter description (up to 200 chars)"
+     images: ["/images/page-specific-twitter.png"]
+   ---
+   ```
+
+2. **Update lastModified field** to current date:
+   - **ALWAYS check system date** using terminal command `date +"%Y-%m-%d"`
+   - **NEVER use hardcoded dates** - LLM training data is outdated
+   - **Current system date**: Use the actual current date from system
+
+3. **Verify all required frontmatter fields** are present and properly formatted
+4. **Ensure SEO compliance** according to SEO-OPTIMIZATION.md guidelines
+5. **Test metadata generation** to confirm proper rendering
+
+**Example of checking current date:**
+```bash
+date +"%Y-%m-%d"  # Use this output for lastModified field
+```
+
+**This rule applies to ALL content updates including:**
+- New documentation pages
+- Existing page modifications
+- Content restructuring
+- Link updates
+- Image additions
+
 ### When Modifying Configuration:
 - Test changes in development environment first
 - Document any breaking changes or migration requirements
