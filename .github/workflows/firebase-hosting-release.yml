@@ -1,0 +1,106 @@
+# Firebase Hosting Release Deployment
+# Automated CI/CD workflow for deploying documentation to Firebase Hosting
+# Triggers on GitHub releases and handles version management, clean builds, and deployment
+
+name: Deploy to Firebase Hosting on Release
+
+# Trigger Configuration
+# Executes when a new GitHub release is published
+# Ensures deployments only happen for official releases, not draft releases or pre-releases
+on:
+  release:
+    types: [published]
+
+# Security Permissions
+# Defines the minimum required permissions for the workflow to function
+# Follows principle of least privilege for security best practices
+permissions:
+  contents: write # Required to update package.json and commit version changes
+
+jobs:
+  build_and_deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      # Repository Setup
+      # Checks out the repository code with authentication token for write operations
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      # Node.js Environment Setup
+      # Configures Node.js v22 to match project requirements
+      # No caching enabled since deployments are infrequent
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+
+      # Package Manager Setup
+      # Configures pnpm for efficient dependency management
+      # Uses latest version for best performance and features
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: latest
+
+      # Version Synchronization
+      # Updates package.json version to match the GitHub release tag
+      # Ensures consistency between release version and package metadata
+      # Commits the version change for audit trail
+      - name: Update package version to match release tag
+        run: |
+          RELEASE_TAG=${GITHUB_REF#refs/tags/}
+          echo "Updating package.json version to $RELEASE_TAG"
+          pnpm version $RELEASE_TAG --no-git-tag-version
+          git config --local user.email "tech@puzzlers-labs.com"
+          git config --local user.name "Puzzlers Labs [release-bot]"
+          git add package.json
+          git commit -m "Update package version to $RELEASE_TAG" || echo "No changes to commit"
+
+      # Build Environment Preparation
+      # Removes previous build artifacts to ensure clean, consistent builds
+      # Prevents stale files from affecting deployment
+      - name: Clean build artifacts
+        run: pnpm clean
+
+      # Dependency Installation
+      # Installs project dependencies using frozen lockfile for reproducible builds
+      # Ensures exact same dependency versions as development environment
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      # Static Site Generation
+      # Builds the Next.js documentation site for production deployment
+      # Includes MDX processing, search index generation, and asset optimization
+      - name: Build project
+        run: pnpm build
+
+      # Firebase Deployment
+      # Deploys the built static site to Firebase Hosting production environment
+      # Uses service account authentication for secure, automated deployment
+      - name: Deploy to Firebase Hosting
+        uses: FirebaseExtended/action-hosting-deploy@v0
+        with:
+          repoToken: ${{ secrets.GITHUB_TOKEN }}
+          firebaseServiceAccount: ${{ secrets.FIREBASE_SERVICE_ACCOUNT_MARAIKKA_DOCS }}
+          projectId: maraikka-docs
+          channelId: live
+# Workflow Benefits
+# - Automated deployments reduce human error and ensure consistency
+# - Version synchronization maintains accurate package metadata
+# - Clean builds prevent deployment issues from stale artifacts
+# - Security best practices with minimal permissions and service account authentication
+# - Production-ready deployment process with proper dependency management
+
+# Required Secrets
+# FIREBASE_SERVICE_ACCOUNT_MARAIKKA_DOCS: Firebase service account key for authentication
+# GITHUB_TOKEN: Automatically provided by GitHub Actions for repository operations
+
+# Environment Dependencies
+# - Firebase project: maraikka-docs
+# - Node.js version: 22
+# - Package manager: pnpm
+# - Build output directory: ./out/
+# - Firebase hosting configuration: firebase.json

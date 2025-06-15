@@ -1,0 +1,21 @@
+{
+  "_comment": "Firebase Project Configuration",
+  "_description": "Defines Firebase project associations for CLI commands and deployment targeting",
+  "projects": {
+    "default": "maraikka-docs"
+  },
+  "_config_notes": {
+    "projects": "Maps project aliases to Firebase project IDs for environment-specific deployments",
+    "default": "Primary Firebase project ID used when no specific project alias is specified in CLI commands"
+  },
+  "_usage_examples": {
+    "deploy_default": "firebase deploy (uses 'maraikka-docs' project)",
+    "explicit_project": "firebase use maraikka-docs",
+    "list_projects": "firebase projects:list"
+  },
+  "_environment_notes": {
+    "development": "Local Firebase CLI uses this configuration for emulator and testing commands",
+    "ci_cd": "GitHub Actions workflow references this project ID for automated deployments",
+    "team_collaboration": "Ensures all team members deploy to the same Firebase project when using default commands"
+  }
+}

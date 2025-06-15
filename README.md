@@ -182,20 +182,54 @@ pnpm prepare      # Set up Husky git hooks
 - **Bundle Splitting** - Optimized JavaScript loading
 - **Caching** - Aggressive caching for static assets
 - **Search Index** - Pagefind generates static search functionality
+- **Clean Builds** - Automated artifact cleanup ensures consistent deployments
 
 ## 🚀 **Deployment**
 
-### Build Process
+### Automated Firebase Hosting
 
-The documentation is built as a static site with integrated search:
+The documentation is automatically deployed to Firebase Hosting when a new release is published:
+
+**Release Deployment Process:**
+
+1. Create a new release on GitHub with a version tag (e.g., `v1.2.0`)
+2. GitHub Actions automatically triggers the deployment workflow
+3. Package version is updated to match the release tag
+4. Clean build is performed with integrated search index
+5. Site is deployed to Firebase Hosting
+
+**Deployment Workflow Features:**
+
+- **Automatic Version Management** - Package.json version updated to match release tag
+- **Clean Build** - Removes all build artifacts before building
+- **Integrated Search** - Pagefind search index generated during build
+- **Firebase Hosting** - Deployed to production Firebase hosting environment
+
+### Manual Build Process
+
+For local testing or alternative deployment:
 
 ```bash
 # Production build with search index
+pnpm clean        # Clean previous build artifacts
 pnpm build        # Builds static site to ./out/
 pnpm postbuild    # Generates Pagefind search index
 
 # Output directory: ./out/
 # Deploy the contents of ./out/ to your hosting provider
+```
+
+### Release Management
+
+To create a new release and trigger deployment:
+
+```bash
+# Create and push a new tag
+git tag v1.2.0
+git push origin v1.2.0
+
+# Or create a release through GitHub UI
+# Go to Releases → Create a new release → Set tag version
 ```
 
 ## 🤝 **Contributing**

@@ -1,0 +1,19 @@
+{
+  "_comment": "Firebase Hosting Configuration",
+  "_description": "Configures Firebase Hosting for static site deployment with clean URLs and optimized file handling",
+  "hosting": {
+    "public": "out",
+    "cleanUrls": true,
+    "ignore": ["firebase.json", "**/.*", "**/node_modules/**"],
+    "_config_notes": {
+      "public": "Static site output directory from Next.js build process",
+      "cleanUrls": "Enables clean URLs without trailing slashes and file extensions for better SEO and user experience",
+      "ignore": "Excludes configuration files, hidden directories, and dependencies from deployment to reduce upload size and improve security"
+    },
+    "_environment_notes": {
+      "development": "Local testing uses 'pnpm start' to serve ./out/ directory",
+      "production": "Firebase Hosting serves files directly from 'out' directory with CDN caching",
+      "deployment": "Automated via GitHub Actions on release publication"
+    }
+  }
+}
