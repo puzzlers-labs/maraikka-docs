@@ -1,0 +1,83 @@
+/**
+ * Custom Footer Component Styles
+ *
+ * Clean CSS implementation for the site footer with proper hover effects.
+ */
+
+/* Footer container layout */
+.custom-footer-container {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+/* Footer sections */
+.footer-section {
+  display: flex;
+  align-items: center;
+}
+
+/* Footer links base styling */
+.footer-link {
+  color: #6b7280;
+  text-decoration: none;
+  font-size: 0.875rem;
+  transition: color 0.2s ease;
+}
+
+.footer-link:hover {
+  color: #8b5cf6;
+  text-decoration: none;
+}
+
+/* Copyright text */
+.footer-copyright {
+  margin: 0;
+  font-size: 0.875rem;
+  color: #6b7280;
+}
+
+/* Separator bullets */
+.footer-separator {
+  color: #9ca3af;
+  margin: 0 0.25rem;
+}
+
+/* Responsive design for mobile */
+@media (max-width: 768px) {
+  .custom-footer-container {
+    flex-direction: column;
+    text-align: center;
+    gap: 0.75rem;
+  }
+
+  .footer-section {
+    justify-content: center;
+  }
+}
+
+/* Focus states for accessibility */
+.footer-link:focus {
+  outline: 2px solid #8b5cf6;
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  .footer-link {
+    color: #374151;
+  }
+
+  .footer-link:hover,
+  .footer-link:focus {
+    color: #7c3aed;
+  }
+
+  .footer-separator {
+    color: #6b7280;
+  }
+}

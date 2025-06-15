@@ -104,7 +104,7 @@ Before completing any task, ensure:
 - [ ] Consistent formatting across all pages
 - [ ] Accessibility standards are met
 - [ ] Spelling and grammar are correct
-- [ ] Build process succeeds (`npm run build`)
+- [ ] Build process succeeds (`pnpm build`)
 - [ ] Search functionality works with new content
 
 ## 🎯 **Context-Specific AI Instructions**

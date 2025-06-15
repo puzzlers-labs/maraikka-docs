@@ -1,0 +1,344 @@
+/**
+ * 404 Not Found Page Styles
+ *
+ * Clean CSS implementation for the custom 404 error page with proper hover effects.
+ */
+
+/* Main container with gradient background */
+.not-found-container {
+  min-height: calc(100vh - var(--nextra-navbar-height));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  background: linear-gradient(135deg, #1e1b4b 0%, #312e81 50%, #1e1b4b 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Background blur effects */
+.background-effect-1 {
+  position: absolute;
+  top: 25%;
+  left: 25%;
+  width: 24rem;
+  height: 24rem;
+  background: radial-gradient(
+    circle,
+    rgba(139, 92, 246, 0.1) 0%,
+    transparent 70%
+  );
+  border-radius: 50%;
+  filter: blur(60px);
+  z-index: 0;
+}
+
+.background-effect-2 {
+  position: absolute;
+  bottom: 25%;
+  right: 25%;
+  width: 24rem;
+  height: 24rem;
+  background: radial-gradient(
+    circle,
+    rgba(59, 130, 246, 0.1) 0%,
+    transparent 70%
+  );
+  border-radius: 50%;
+  filter: blur(60px);
+  z-index: 0;
+}
+
+/* Content wrapper */
+.content-wrapper {
+  max-width: 48rem;
+  text-align: center;
+  position: relative;
+  z-index: 10;
+}
+
+/* 404 number display */
+.error-number {
+  font-size: clamp(6rem, 15vw, 12rem);
+  font-weight: 900;
+  background: linear-gradient(135deg, #8b5cf6, #a78bfa, #3b82f6);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  line-height: 1;
+  margin: 0 0 1rem 0;
+  text-shadow: 0 0 40px rgba(139, 92, 246, 0.3);
+}
+
+/* Main heading */
+.error-title {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #f8fafc;
+  margin: 0 0 1.5rem 0;
+  font-family:
+    system-ui,
+    -apple-system,
+    sans-serif;
+}
+
+/* Description text */
+.error-description {
+  font-size: 1.25rem;
+  color: #cbd5e1;
+  line-height: 1.6;
+  margin: 0 auto 2rem auto;
+  max-width: 32rem;
+  font-family:
+    system-ui,
+    -apple-system,
+    sans-serif;
+}
+
+/* Action buttons container */
+.action-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 4rem;
+}
+
+/* Primary button (Go Home) */
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 1rem 2rem;
+  background: linear-gradient(135deg, #8b5cf6, #3b82f6);
+  color: white;
+  font-weight: 600;
+  border-radius: 0.75rem;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  box-shadow: 0 10px 25px rgba(139, 92, 246, 0.3);
+  font-family:
+    system-ui,
+    -apple-system,
+    sans-serif;
+  font-size: 1rem;
+  transform: translateY(0);
+}
+
+.btn-primary:hover {
+  background: linear-gradient(135deg, #7c3aed, #2563eb);
+  transform: translateY(-2px);
+  box-shadow: 0 15px 35px rgba(139, 92, 246, 0.4);
+  color: white;
+  text-decoration: none;
+}
+
+/* Secondary button (Getting Started) */
+.btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 1rem 2rem;
+  background: rgba(255, 255, 255, 0.1);
+  color: #e2e8f0;
+  font-weight: 600;
+  border-radius: 0.75rem;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  text-decoration: none;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(10px);
+  font-family:
+    system-ui,
+    -apple-system,
+    sans-serif;
+  font-size: 1rem;
+  transform: translateY(0);
+}
+
+.btn-secondary:hover {
+  background: rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(255, 255, 255, 0.1);
+  color: #e2e8f0;
+  text-decoration: none;
+}
+
+/* Popular pages section */
+.popular-section {
+  border-top: 1px solid rgba(139, 92, 246, 0.3);
+  padding-top: 3rem;
+}
+
+.popular-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #f8fafc;
+  margin-bottom: 2rem;
+  font-family:
+    system-ui,
+    -apple-system,
+    sans-serif;
+}
+
+.popular-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5rem;
+  max-width: 48rem;
+  margin: 0 auto;
+}
+
+/* Base card styling */
+.page-card {
+  padding: 1.5rem;
+  border-radius: 0.75rem;
+  text-decoration: none;
+  color: inherit;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(10px);
+  transform: translateY(0);
+  display: block;
+}
+
+.page-card:hover {
+  transform: translateY(-4px);
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Installation card (purple theme) */
+.card-installation {
+  background: rgba(139, 92, 246, 0.1);
+  border: 1px solid rgba(139, 92, 246, 0.2);
+}
+
+.card-installation:hover {
+  background: rgba(139, 92, 246, 0.2);
+  border: 1px solid rgba(139, 92, 246, 0.4);
+  box-shadow: 0 10px 25px rgba(139, 92, 246, 0.2);
+}
+
+/* User Guide card (blue theme) */
+.card-user-guide {
+  background: rgba(59, 130, 246, 0.1);
+  border: 1px solid rgba(59, 130, 246, 0.2);
+}
+
+.card-user-guide:hover {
+  background: rgba(59, 130, 246, 0.2);
+  border: 1px solid rgba(59, 130, 246, 0.4);
+  box-shadow: 0 10px 25px rgba(59, 130, 246, 0.2);
+}
+
+/* Security card (green theme) */
+.card-security {
+  background: rgba(34, 197, 94, 0.1);
+  border: 1px solid rgba(34, 197, 94, 0.2);
+}
+
+.card-security:hover {
+  background: rgba(34, 197, 94, 0.2);
+  border: 1px solid rgba(34, 197, 94, 0.4);
+  box-shadow: 0 10px 25px rgba(34, 197, 94, 0.2);
+}
+
+/* Card header with icon and title */
+.card-header {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 0.75rem;
+}
+
+.card-icon {
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+}
+
+.card-icon-installation {
+  background: rgba(139, 92, 246, 0.2);
+}
+
+.card-icon-user-guide {
+  background: rgba(59, 130, 246, 0.2);
+}
+
+.card-icon-security {
+  background: rgba(34, 197, 94, 0.2);
+}
+
+.card-title {
+  font-weight: 600;
+  color: #f8fafc;
+  margin: 0;
+  font-family:
+    system-ui,
+    -apple-system,
+    sans-serif;
+}
+
+.card-description {
+  font-size: 0.875rem;
+  color: #cbd5e1;
+  line-height: 1.4;
+  margin: 0;
+  font-family:
+    system-ui,
+    -apple-system,
+    sans-serif;
+}
+
+/* Footer message */
+.footer-message {
+  margin-top: 3rem;
+  padding: 1.5rem;
+  background: rgba(139, 92, 246, 0.05);
+  border: 1px solid rgba(139, 92, 246, 0.2);
+  border-radius: 0.75rem;
+  backdrop-filter: blur(10px);
+}
+
+.footer-text {
+  font-size: 0.875rem;
+  color: #cbd5e1;
+  margin: 0;
+  font-family:
+    system-ui,
+    -apple-system,
+    sans-serif;
+}
+
+.inline-link {
+  font-weight: 600;
+  color: #a78bfa;
+  text-decoration: none;
+}
+
+.inline-link:hover {
+  color: #c4b5fd;
+  text-decoration: none;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .not-found-container {
+    padding: 1rem;
+  }
+
+  .popular-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .action-buttons {
+    width: 100%;
+  }
+
+  .btn-primary,
+  .btn-secondary {
+    width: 100%;
+    justify-content: center;
+    max-width: 300px;
+  }
+}

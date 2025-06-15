@@ -55,28 +55,28 @@ export async function generateMetadata({ params }) {
 
 ### Homepage (`content/index.mdx`)
 
-**Primary Keywords**: "file encryption software", "secure file encryption", "AES-256 encryption"
+**Primary Keywords**: "documentation platform", "knowledge management", "team collaboration"
 **Focus**: Brand authority, product overview, clear navigation
 
 ### Getting Started Pages
 
-**Primary Keywords**: "how to encrypt files", "file encryption tutorial", "encrypt files beginner"
+**Primary Keywords**: "documentation setup", "getting started guide", "documentation tutorial"
 **Focus**: Step-by-step tutorials, quick wins, conversion paths
 
 ### Feature Documentation (`content/features/`)
 
-**Primary Keywords**: "AES encryption guide", "file encryption methods", "secure file storage"
-**Focus**: Detailed features, technical implementation, use cases
+**Primary Keywords**: "documentation features", "content editing", "collaboration tools" **Focus**:
+Detailed features, technical implementation, use cases
 
 ### User Guides (`content/user-guide/`)
 
-**Primary Keywords**: "encryption software guide", "file encryption workflow", "secure file
-management" **Focus**: Comprehensive workflows, best practices, real-world examples
+**Primary Keywords**: "documentation workflow", "team collaboration", "content management"
+**Focus**: Comprehensive workflows, best practices, real-world examples
 
-### Troubleshooting Pages
+### Development Guide (`content/development-guide/`)
 
-**Primary Keywords**: "encryption software problems", "file encryption errors", "decrypt file
-issues" **Focus**: Problem-solution format, common errors, quick resolutions
+**Primary Keywords**: "documentation development", "build from source", "API documentation"
+**Focus**: Developer onboarding, technical setup, contribution guidelines
 
 ## Technical Implementation
 
@@ -85,13 +85,12 @@ issues" **Focus**: Problem-solution format, common errors, quick resolutions
 ```
 docs.maraikka.com/
 ├── getting-started/
-├── installation/
-├── development/
-├── user-guide/
 ├── features/
-├── troubleshooting/
-├── security/
-└── advanced/
+│   └── content-editing/
+├── user-guide/
+│   ├── collaboration/
+│   └── bulk-operations/
+└── development-guide/
 ```
 
 ### Search Implementation
@@ -150,12 +149,13 @@ twitter:
 
 **Primary Keywords**:
 
-- file encryption, secure file storage, AES-256 encryption, encrypt files, data protection
+- documentation platform, knowledge management, team collaboration, content creation, documentation
+  tools
 
 **Long-tail Keywords**:
 
-- how to encrypt files securely, best file encryption software, AES encryption tutorial, protect
-  files with password, secure document storage
+- how to create documentation, best documentation platform, team collaboration tools, content
+  management system, documentation workflow
 
 ### Content Structure Best Practices
 
@@ -170,17 +170,19 @@ twitter:
 
 **Open Graph (1200x630px)**:
 
-- `maraikka-docs-home-og.png` - Homepage
+- `maraikka-og-default.png` - Default/Homepage
 - `maraikka-getting-started-og.png` - Getting started
-- `maraikka-encryption-guide-og.png` - Encryption guide
-- `maraikka-troubleshooting-og.png` - Troubleshooting
+- `maraikka-features-og.png` - Features overview
+- `maraikka-user-guide-og.png` - User guide
+- `maraikka-development-guide-og.png` - Development guide
 
 **Twitter Cards (1200x675px)**:
 
-- `maraikka-docs-home-twitter.png` - Homepage
+- `maraikka-twitter-default.png` - Default/Homepage
 - `maraikka-getting-started-twitter.png` - Getting started
-- `maraikka-encryption-guide-twitter.png` - Encryption guide
-- `maraikka-troubleshooting-twitter.png` - Troubleshooting
+- `maraikka-features-twitter.png` - Features overview
+- `maraikka-user-guide-twitter.png` - User guide
+- `maraikka-development-guide-twitter.png` - Development guide
 
 ## SEO Optimization Requirements
 

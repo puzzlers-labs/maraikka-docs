@@ -135,13 +135,11 @@ When adding new sections, update the relevant `meta.json` file:
 
 ```json
 {
-  "index": "Overview",
+  "index": "Introduction",
   "getting-started": "Getting Started",
-  "installation": "Installation Guide",
-  "user-guide": "User Guide",
   "features": "Features",
-  "troubleshooting": "Troubleshooting",
-  "security": "Security"
+  "user-guide": "User Guide",
+  "development-guide": "Development Guide"
 }
 ```
 
@@ -174,21 +172,20 @@ directory. Each content page should have its own image directory:
 
 ```
 public/images/
-├── getting-started/    # Images for getting-started content
-├── installation/       # Images for installation guides
-├── user-guide/         # Images for user guide content
-│   └── encryption/     # Images for encryption user guide sub-page
-├── features/           # Images for features documentation
-├── security/           # Images for security documentation
-├── troubleshooting/    # Images for troubleshooting guides
-└── advanced/           # Images for advanced topics
+├── getting-started/        # Images for getting-started content
+├── features/               # Images for features documentation
+│   └── content-editing/    # Images for content editing feature sub-page
+├── user-guide/             # Images for user guide content
+│   ├── collaboration/      # Images for collaboration user guide sub-page
+│   └── bulk-operations/    # Images for bulk operations user guide sub-page
+└── development-guide/      # Images for development guide content
 ```
 
 **Directory Structure Rules:**
 
 - Mirror the `content/` directory structure exactly
-- If content is in `content/user-guide/encryption.mdx`, images go in
-  `public/images/user-guide/encryption/`
+- If content is in `content/user-guide/collaboration.mdx`, images go in
+  `public/images/user-guide/collaboration/`
 - Use kebab-case for directory names matching content structure
 - Keep all related images for a content page in its dedicated directory
 
@@ -221,19 +218,18 @@ Reference images using relative paths from the public directory, following the c
 
 <!-- For user-guide sub-page -->
 
-![Descriptive Alt Text](/images/user-guide/batch-processing/workflow-diagram.png)
+![Descriptive Alt Text](/images/user-guide/bulk-operations/workflow-diagram.png)
 
 <!-- For features page -->
 
-![Descriptive Alt Text](/images/features/encryption-process.png)
+![Descriptive Alt Text](/images/features/content-editing/editing-process.png)
 ```
 
 **Path Examples:**
 
-- Content at `content/installation/index.mdx` → Images at `/images/installation/`
-- Content at `content/user-guide/batch-processing.mdx` → Images at
-  `/images/user-guide/batch-processing/`
-- Content at `content/api/index.mdx` → Images at `/images/api/`
+- Content at `content/getting-started/index.mdx` → Images at `/images/getting-started/`
+- Content at `content/user-guide/bulk-operations.mdx` → Images at
+  `/images/user-guide/bulk-operations/`
 
 ## 🔍 **Quality Checklist**
 

@@ -8,6 +8,8 @@ import { getPageMap } from "nextra/page-map";
 import Image from "next/image";
 import CustomFooter from "../components/CustomFooter";
 import "nextra-theme-docs/style.css";
+import "../public/styles/not-found.css";
+import "../public/styles/custom-footer.css";
 
 // Site Metadata Configuration
 // Defines default metadata for SEO, Open Graph, and browser display
@@ -180,6 +182,50 @@ export default async function RootLayout({ children }) {
           toc={{
             backToTop: true,
             title: "On This Page",
+            extraContent: (
+              <div
+                style={{
+                  marginTop: "0.5rem",
+                  borderTop: "1px solid var(--nx-colors-gray-200)",
+                }}
+              >
+                <p
+                  style={{
+                    fontSize: "0.875rem",
+                    fontWeight: "600",
+                    color: "var(--x-color-gray-600)",
+                    marginBottom: "0.75rem",
+                  }}
+                >
+                  Developed By:
+                </p>
+                <a
+                  href="https://puzzlers-labs.com"
+                  target="_blank"
+                  rel="noopener"
+                >
+                  <div
+                    style={{
+                      display: "flex",
+                      justifyContent: "center",
+                      alignItems: "center",
+                      borderRadius: "0.5rem",
+                      border: "1px solid var(--x-color-gray-200)",
+                    }}
+                  >
+                    <Image
+                      src="/images/puzzlers-labs-logo.png"
+                      alt="Puzzlers Labs Logo"
+                      width={1920}
+                      height={1080}
+                      style={{
+                        borderRadius: "0.5rem",
+                      }}
+                    />
+                  </div>
+                </a>
+              </div>
+            ),
           }}
           // Feedback functionality
           feedback={{

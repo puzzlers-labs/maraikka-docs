@@ -50,6 +50,11 @@ maraikka-docs/
 │   └── layout.jsx              # Root layout with theme configuration
 ├── components/                 # React components
 ├── content/                    # Documentation content (MDX files)
+│   ├── index.mdx               # Introduction page
+│   ├── getting-started/        # Installation and setup guides
+│   ├── features/               # Feature documentation
+│   ├── user-guide/             # User guides and tutorials
+│   └── development-guide/      # Developer documentation
 ├── public/                     # Static assets and images
 ├── eslint.config.js            # ESLint configuration
 ├── prettier.config.js          # Code formatting rules
