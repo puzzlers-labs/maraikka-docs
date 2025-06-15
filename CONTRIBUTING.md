@@ -167,10 +167,73 @@ const example = "with language specified";
 
 ### Images and Media
 
-- Store images in `public/images/`
-- Use descriptive filenames (`feature-overview.png`)
-- Include alt text for accessibility
-- Optimize images for web delivery
+#### Image Organization
+
+Store all images in the `public/images/` directory following the same structure as the content
+directory. Each content page should have its own image directory:
+
+```
+public/images/
+├── getting-started/    # Images for getting-started content
+├── installation/       # Images for installation guides
+├── user-guide/         # Images for user guide content
+│   └── encryption/     # Images for encryption user guide sub-page
+├── features/           # Images for features documentation
+├── security/           # Images for security documentation
+├── troubleshooting/    # Images for troubleshooting guides
+└── advanced/           # Images for advanced topics
+```
+
+**Directory Structure Rules:**
+
+- Mirror the `content/` directory structure exactly
+- If content is in `content/user-guide/encryption.mdx`, images go in
+  `public/images/user-guide/encryption/`
+- Use kebab-case for directory names matching content structure
+- Keep all related images for a content page in its dedicated directory
+
+#### Image Guidelines
+
+**File Requirements:**
+
+- **Format**: PNG for quality and transparency support
+- **Naming**: Use descriptive, kebab-case filenames (`feature-overview.png`)
+- **Optimization**: Optimize for web delivery to improve loading performance
+- **Alt Text**: Always include descriptive alt text for accessibility
+
+**Brand Colors for Images:** Use Maraikka's brand color palette when creating graphics:
+
+- **Primary Purple**: `#8B5CF6` (violet)
+- **Success Green**: `#10B981`
+- **Warning Orange**: `#F97316`
+- **Error Red**: `#EF4444`
+- **Info Blue**: `#67BFFF`
+- **Neutral Gray**: `#F3F4F6` with `#374151` text
+
+#### Usage in Documentation
+
+Reference images using relative paths from the public directory, following the content structure:
+
+```markdown
+<!-- For getting-started page -->
+
+![Descriptive Alt Text](/images/getting-started/image-name.png)
+
+<!-- For user-guide sub-page -->
+
+![Descriptive Alt Text](/images/user-guide/batch-processing/workflow-diagram.png)
+
+<!-- For features page -->
+
+![Descriptive Alt Text](/images/features/encryption-process.png)
+```
+
+**Path Examples:**
+
+- Content at `content/installation/index.mdx` → Images at `/images/installation/`
+- Content at `content/user-guide/batch-processing.mdx` → Images at
+  `/images/user-guide/batch-processing/`
+- Content at `content/api/index.mdx` → Images at `/images/api/`
 
 ## 🔍 **Quality Checklist**
 
