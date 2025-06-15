@@ -52,10 +52,11 @@ jobs:
       - name: Update package version to match release tag
         run: |
           RELEASE_TAG=${GITHUB_REF#refs/tags/}
-          echo "Updating package.json version to $RELEASE_TAG"
-          pnpm version $RELEASE_TAG --no-git-tag-version
+          VERSION=${RELEASE_TAG#v}
+          echo "Updating package.json version to $VERSION"
+          pnpm version $VERSION --no-git-tag-version
           git config --local user.email "tech@puzzlers-labs.com"
-          git config --local user.name "Puzzlers Labs [release-bot]"
+          git config --local user.name "Puzzlers Labs [bot]"
           git add package.json
           git commit -m "Update package version to $RELEASE_TAG" || echo "No changes to commit"
 
